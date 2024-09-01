@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS Bootcamp Widgets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 text-gray-800 p-4">
+    <h1 class="text-3xl font-bold mb-6">AlpineJS Bootcamp Widgets</h1>
+    
+    <div id="widgets" class="space-y-8">
+        <!-- Greet Function Widget -->
+        <div class="widget" x-data="{ name: '', language: 'english', greeting: '' }">
+            <h2 class="text-2xl mb-4">Greet Function</h2>
+            <input x-model="name" placeholder="Enter your name" class="p-2 border mb-2 w-full"/>
+            <select x-model="language" class="p-2 border mb-2 w-full">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+            </select>
+            <button @click="greeting = greet(name, language)">Greet</button>
+            <p x-text="greeting" class="mt-2"></p>
+        </div>
+
+    </div>
+    
+    <!-- Import AlpineJS -->
+    <script src="https://unpkg.com/alpinejs@3.11.1" defer></script>
+
+    <!-- Import your JavaScript files here -->
+    <script src="greet.js"></script>
+</body>
+</html>
